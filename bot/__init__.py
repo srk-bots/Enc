@@ -13,14 +13,21 @@ bot_token = os.environ.get("BOT_TOKEN")
 download_dir = os.environ.get("DOWNLOAD_DIR", "downloads/")
 sudo_users = list(set(int(x) for x in os.environ.get("SUDO_USERS").split()))
 
-# ✅ Initialize Pyrogram client
-app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
-# ✅ Global task queue
+# ✅ Global parse_mode set to HTML
+app = Client(
+    ":memory:",
+    api_id=api_id,
+    api_hash=api_hash,
+    bot_token=bot_token,
+    parse_mode="HTML"  # ← This is the change
+)
+
+# Initialize queue
 data = []
 
-# ✅ Ensure download directory exists and ends with slash
+# Make sure download_dir is valid
 if not download_dir.endswith("/"):
-    download_dir = download_dir + "/"
+    download_dir += "/"
 if not os.path.isdir(download_dir):
     os.makedirs(download_dir)
