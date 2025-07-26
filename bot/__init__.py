@@ -7,8 +7,8 @@ if os.path.exists('config.env'):
     load_dotenv('config.env')
 
 # ✅ Read values from environment
-api_id = int(os.environ.get("25874070"))
-api_hash = os.environ.get("f1522f0124b736b5eb4df95291d4139c")
+api_id = int(os.environ.get("API_ID"))
+api_hash = os.environ.get("API_HASH")
 bot_token = os.environ.get("BOT_TOKEN")
 download_dir = os.environ.get("DOWNLOAD_DIR", "downloads/")
 sudo_users = list(set(int(x) for x in os.environ.get("SUDO_USERS").split()))
