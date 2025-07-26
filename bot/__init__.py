@@ -20,7 +20,7 @@ app = Client(
     api_id=api_id,
     api_hash=api_hash,
     bot_token=bot_token,
-    parse_mode="HTML"  # ← This is the change
+    parse_mode="Markdown"  # or simply "markdown"  
 )
 
 # Initialize queue
