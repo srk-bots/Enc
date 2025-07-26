@@ -13,7 +13,7 @@ def add_task(message: Message):
     try:
       msg = message.reply_text("Downloading video...", quote=True)
       filepath = message.download(file_name=download_dir)
-      msg.edit("```Encoding video...```")
+      msg.edit("Encoding video...")
       new_file = encode(filepath)
       if new_file:
         msg.edit("Video Encoded, getting metadata...")
