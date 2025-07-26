@@ -31,5 +31,5 @@ def add_task(message: Message):
     except MessageNotModified:
       pass
     except Exception as e:
-      msg.edit(f"```{e}```")
+      msg.reply_text("<code>Something</code>", parse_mode="HTML")
     on_task_complete()
